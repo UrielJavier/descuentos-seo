@@ -1,0 +1,23 @@
+{
+  "name": "descuentos-seo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrielJavier/descuentos-seo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UrielJavier/descuentos-seo/issues"
+  },
+  "homepage": "https://github.com/UrielJavier/descuentos-seo#readme",
+  "dependencies": {
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2"
+  }
+}

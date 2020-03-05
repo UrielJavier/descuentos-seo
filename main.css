@@ -1,0 +1,46 @@
+body {
+    background-color: black;  
+    color: white;
+}
+
+#cabecera {
+    background-color: black;
+    width: 100vw;
+    height: 30vh;
+}
+
+#cupones {
+    display: flex;
+    justify-content: center;
+}
+
+.cupon {
+    border: 1px solid red;
+    min-width: 66vw;
+    min-height: 8rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: left;
+
+}
+
+.points {
+    border: 1px dotted white;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+.titulo {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.subtitulo {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.info {
+    font-weight: 300;
+    font-size: 0.7rem;
+}

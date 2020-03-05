@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+</head>
+<body>
+    
+    <div id='cabecera'>
+
+    </div>
+
+    <div id='cupones'>
+        <best-cupons></best-cupons>
+    </div>
+
+    <div id='footer'>
+
+    </div>
+
+
+    <script type="module">
+        import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';
+        
+        class Cupones extends LitElement {
+
+        static get properties() {
+            return {
+                cupones: {
+                    type: Array
+                }
+            }
+        }
+
+        constructor() {
+            super();
+            this.cupones = [
+                {titulo:'Descuento del 5%',  subtitulo: 'en tu proxima compra de ', marca: 'Uber',      info: 'Solo para usuarios nuevos'},
+                {titulo:'Descuento del 10%', subtitulo: 'en tu proxima compra de ', marca: 'GLOVO',     info: 'Solo para usuarios nuevos'},
+                {titulo:'Descuento del 5%',  subtitulo: 'en tu proxima compra de ', marca: 'Uber eats', info: 'Solo para usuarios nuevos'},
+                {titulo:'Descuento del 3%',  subtitulo: 'en tu proxima compra de ', marca: 'Cabify',    info: 'Solo para usuarios nuevos'}
+            ]
+        }
+
+        render() {
+                return html`${this.cupones.map( (i) =>
+                            html`
+                            <link rel="stylesheet" type="text/css" href="main.css">
+                                <div id=${i.marca} class='cupon zigzag'>
+                                    <div class='points'>
+                                        <div class='titulo'>${i.titulo}</div>
+                                        <div class='subtitulo'>${i.subtitulo} ${i.marca}</div>
+                                        <div class='info'>${i.info}</div>
+                                    </div>
+                                </div>
+                            `
+                )}`; 
+            }
+        }
+        customElements.define('best-cupons', Cupones);
+    </script>  
+</body>
+</html>
