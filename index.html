@@ -7,13 +7,13 @@
 <body>
     
     <div id='cabecera'>
-
+        <h1>Los mejores cupones descuentos</h1>
+        <h2>¡Son codigos aplicables en Uber Eats, Uber, Cabify, Glovo, Deliveroo y muchos mas!</h2>
+        <p>Estos descuentos son de afiliacion y normalemente solo sirve paran las cuentas recien creadas. Espero que los disfrutes. </p>
     </div>
 
-    <div id='cupones'>
-        <best-cupons></best-cupons>
-    </div>
-
+    <best-cupons id='cupones'></best-cupons>
+    
     <div id='footer'>
 
     </div>
@@ -35,10 +35,10 @@
         constructor() {
             super();
             this.cupones = [
-                {titulo:'Descuento del 5%',  subtitulo: 'en tu proxima compra de ', marca: 'Uber',      info: 'Solo para usuarios nuevos'},
-                {titulo:'Descuento del 10%', subtitulo: 'en tu proxima compra de ', marca: 'GLOVO',     info: 'Solo para usuarios nuevos'},
-                {titulo:'Descuento del 5%',  subtitulo: 'en tu proxima compra de ', marca: 'Uber eats', info: 'Solo para usuarios nuevos'},
-                {titulo:'Descuento del 3%',  subtitulo: 'en tu proxima compra de ', marca: 'Cabify',    info: 'Solo para usuarios nuevos'}
+                {titulo:'5€ de regalo',  subtitulo: 'para tu primer viaje en ', marca: 'UBER',      info: 'Solo si te registras usando este codigo', codigo:'m7eofe'},
+                {titulo:'Consigue 5€ de credito', subtitulo: 'en gastos de envios para ', marca: 'GLOVO',     info: 'Valido para el primer pedido, superior a 10€', codigo:'1C3KYDD'},
+                {titulo:'Descuento de 10€',  subtitulo: 'en 2 pedidos de 12€ o más en ', marca: 'UBER EATS', info: 'Solo valido para tu primer pedido', codigo:'eats-m7eofe'},
+                {titulo:'Toma 3€ de descuento',  subtitulo: 'en tus 3 proximos viajes ', marca: 'CABIFY',    info: 'Solo para usuarios nuevos', codigo:'URIELA377'}
             ]
         }
 
@@ -46,10 +46,11 @@
                 return html`${this.cupones.map( (i) =>
                             html`
                             <link rel="stylesheet" type="text/css" href="main.css">
-                                <div id=${i.marca} class='cupon zigzag'>
+                                <div id='_${i.marca}' class='cupon zigzag'>
                                     <div class='points'>
                                         <div class='titulo'>${i.titulo}</div>
-                                        <div class='subtitulo'>${i.subtitulo} ${i.marca}</div>
+                                        <div class='subtitulo'>${i.subtitulo} <a id='${i.marca.replace(/\s/g, '')}' class='marca'>${i.marca}</a></div>
+                                        <div class='codigo'>${i.codigo}</div>
                                         <div class='info'>${i.info}</div>
                                     </div>
                                 </div>
